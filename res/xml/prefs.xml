@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" ><EditTextPreference android:summary="The name that app refers to you as" android:enabled="true" android:key="userName" android:title="Name"/>
+    
+    <ListPreference android:entries="@array/devices" android:entryValues="@array/devicesValues" android:title="Device" android:enabled="true" android:key="device" android:summary="In case we failed to identify your device"/>
+    
+
+</PreferenceScreen>

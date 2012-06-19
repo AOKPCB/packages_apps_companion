@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="devices">
+    	<item>captivatemtd</item>
+    	<item>crepo</item>
+    	<item>crespo4g</item>
+    	<item>espressowifi</item>
+    	<item>fascinatemtd</item>
+    	<item>galaxysmtd</item>
+    	<item>inc</item>
+    	<item>maguro</item>
+    	<item>otter</item>
+    	<item>p1c</item>
+    	<item>p4</item>
+    	<item>p4vzw</item>
+    	<item>p4wifi</item>
+    	<item>p5wifi</item>
+    	<item>p990</item>
+    	<item>p999</item>
+    	<item>picasso</item>
+    	<item>pyramid</item>
+    	<item>stringray</item>
+    	<item>supersonic</item>
+    	<item>tenderloin</item>
+    	<item>tf101</item>
+    	<item>tf201</item>
+    	<item>toro</item>
+    	<item>toroplus</item>
+    	<item>vibrantmtd</item>
+    	<item>ville</item>
+    	<item>vivow</item>
+    	<item>wingray</item>
+    </string-array>
+    
+   <string-array name="devicesValues">
+    	<item>captivatemtd</item>
+    	<item>crepo</item>
+    	<item>crespo4g</item>
+    	<item>espressowifi</item>
+    	<item>fascinatemtd</item>
+    	<item>galaxysmtd</item>
+    	<item>inc</item>
+    	<item>maguro</item>
+    	<item>otter</item>
+    	<item>p1c</item>
+    	<item>p4</item>
+    	<item>p4vzw</item>
+    	<item>p4wifi</item>
+    	<item>p5wifi</item>
+    	<item>p990</item>
+    	<item>p999</item>
+    	<item>picasso</item>
+    	<item>pyramid</item>
+    	<item>stringray</item>
+    	<item>supersonic</item>
+    	<item>tenderloin</item>
+    	<item>tf101</item>
+    	<item>tf201</item>
+    	<item>toro</item>
+    	<item>toroplus</item>
+    	<item>vibrantmtd</item>
+    	<item>ville</item>
+    	<item>vivow</item>
+    	<item>wingray</item>
+    </string-array>
+    
+    
+</resources>

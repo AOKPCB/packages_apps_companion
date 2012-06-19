@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string name="app_name">AOKPCB Companion</string>
+            
+    <!-- About -->
+    <string name="devs">Team Broccoli</string>
+    <string name="scar45">scar45</string>
+    <string name="remicks">remicks</string>
+    <string name="cr5315">cr5315</string>
+    <string name="sixstringsg">sixstringsg</string>
+    <string name="twitter">Twitter</string>
+    <string name="donate">Donate</string>
+    
+    <!-- Bug Report -->
+    <string name="info">Collected Information</string>
+    <string name="description">Description of bug</string>
+    <string name="submit">Submit Bug</string>
+    <string name="via">Send email via…</string>
+    <string name="device">Device:</string>
+    <string name="rom_version">AOKPCB Version:</string>
+    <string name="versionText">AOKPCB Companion</string>
+    <string name="describe">Please write a description of the bug</string>
+    
+    <!-- Menu -->
+    <string name="reportMenu">Report a Bug</string>
+    <string name="about">About</string>
+    <string name="settings">Settings</string>
+    
+    <!-- Main Page -->
+    <string name="hello">Hello</string>
+    <string name="hell2">. What can I help you with today?</string>
+    <string name="updates">Check for ROM updates</string>
+    
+    
+
+</resources>
