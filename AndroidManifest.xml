@@ -20,6 +20,7 @@
         </activity>
         <activity android:name=".ReportBug" />
         <activity android:name=".Preferences" />
+        <activity android:name=".Update" />
     </application>
 
 </manifest>

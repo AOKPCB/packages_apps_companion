@@ -97,7 +97,7 @@ public class ReportBug extends Activity {
 	}
 	
 	public static String getModVersion() {
-        String modVer = getSystemProperty(Customization.RO_AOKPCB_VERSION);
+        String modVer = getSystemProperty(Versions.RO_AOKPCB_VERSION);
 
         return (modVer == null || modVer.length() == 0 ? "Unknown" : modVer);
     }

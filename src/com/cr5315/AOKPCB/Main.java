@@ -14,6 +14,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -48,6 +50,17 @@ public class Main extends Activity {
         w.setText(getResources().getString(R.string.hello) + " " + uName + getResources().getString(R.string.hell2));
         
         Log.i(tag, "Set name in welcome message to" + " " + uName);
+        
+        Button u = (Button) findViewById(R.id.updateButton);
+        u.setOnClickListener(new View.OnClickListener() {
+			
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent i = new Intent (Main.this, Update.class);
+				startActivity(i);
+				finish();
+			}
+		});
         }
     }
     
@@ -117,7 +130,18 @@ public class Main extends Activity {
             	finish();
             	return true;
             case R.id.about:
-                
+                AlertDialog.Builder b = new AlertDialog.Builder(this);
+                b.setTitle(R.string.about);
+                b.setMessage("AOKPCB Companion\nAlpha 1\n\nDeveloped by cr5315\n\nIf you have this and aren't cr5315, remicks, scar45, or sixstringsg, you shouldn't have this");
+                b.setNeutralButton("OK", new DialogInterface.OnClickListener() {
+					
+					public void onClick(DialogInterface dialog, int which) {
+						// TODO Auto-generated method stub
+						dialog.cancel();
+					}
+				});
+                b.create();
+                b.show();                
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

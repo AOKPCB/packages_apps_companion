@@ -32,6 +32,11 @@
     <string name="hell2">. What can I help you with today?</string>
     <string name="updates">Check for ROM updates</string>
     
-    
+    <!-- Update -->
+    <string name="update_title">Updates</string>
+    <string name="download">Download Update</string>
+    <string name="changelog">Changelog:</string>   
+    <string name="current">Current Version:</string>
+    <string name="latest">Latest Version:</string>
 
 </resources>
