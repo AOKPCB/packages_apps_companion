@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.preference.PreferenceActivity;
 import android.view.KeyEvent;
 import android.view.MenuItem;
+import com.cr5315.companion.R;
 
 public class Preferences extends PreferenceActivity {
 	 

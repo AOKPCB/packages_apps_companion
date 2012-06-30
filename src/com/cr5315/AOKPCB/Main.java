@@ -1,12 +1,13 @@
 package com.cr5315.AOKPCB;
 
-import android.app.ActionBar;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -15,11 +16,14 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.cr5315.companion.R;
 
 public class Main extends Activity {
 	
@@ -40,31 +44,93 @@ public class Main extends Activity {
         } else {
         	
         setContentView(R.layout.main);
-        
-        Log.i(tag, "Get ActionBar");
-        ActionBar bar = getActionBar();
-                
+                        
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         uName = prefs.getString("userName", "user");
         TextView w = (TextView) findViewById(R.id.welcomeText);
-        w.setText(getResources().getString(R.string.hello) + " " + uName + getResources().getString(R.string.hell2));
-        
+        w.setText(getResources().getString(R.string.hello) + " " + uName + getResources().getString(R.string.hello2));
         Log.i(tag, "Set name in welcome message to" + " " + uName);
         
-        Button u = (Button) findViewById(R.id.updateButton);
-        u.setOnClickListener(new View.OnClickListener() {
-			
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				Intent i = new Intent (Main.this, Update.class);
-				startActivity(i);
-				finish();
-			}
-		});
+        Log.i(tag, "Set up ListView");
+        
+        Devs devs_data[] = new Devs[] {
+        	new Devs(R.drawable.dev_scar45, getResources().getString(R.string.scar45), "Motto here"),
+        	new Devs(R.drawable.dev_remicks, getResources().getString(R.string.remicks), "Motto here"),
+        	new Devs(R.drawable.dev_cr5315, getResources().getString(R.string.cr5315), "I won\'t eat until when I\'m explode"),
+        	new Devs(R.drawable.dev_sixstringsg, getResources().getString(R.string.sixstringsg), "Motto here")
+        };
+        
+        DevsAdapter adapter = new DevsAdapter(this, R.layout.listitem, devs_data);
+
+        ListView listView = (ListView) findViewById(R.id.listView1);
+        
+        View header = (View)getLayoutInflater().inflate(R.layout.listheader, null);
+        
+        listView.addHeaderView(header);
+        
+        listView.setAdapter(adapter);
+        
+        listView.setOnItemClickListener(new OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View view, int position,
+                    long id) {
+                                
+                devClick(position);
+                
+            }
+        });
         }
     }
     
-    @SuppressWarnings("deprecation")
+    public void devClick(int position) {
+    	if (position == 0) {
+    		Toast.makeText(getApplicationContext(), "Soon...", Toast.LENGTH_SHORT).show();
+    	} else if (position == 1) {
+    		devDialog(R.drawable.dev_scar45, R.string.scar45, R.string.bio_scar45, "https://twitter.com/scar45", null);
+    	} else if (position == 2) {
+    		devDialog(R.drawable.dev_remicks, R.string.remicks, R.string.bio_remicks, "https://twitter.com/remicksTweetz", null);
+    	} else if (position == 3) {
+    		devDialog(R.drawable.dev_cr5315, R.string.cr5315, R.string.bio_cr5315, "https://twitter.com/cr5315", null);
+    	} else if (position == 4) {
+    		devDialog(R.drawable.dev_sixstringsg, R.string.sixstringsg, R.string.bio_sixstringsg, "https://twitter.com/sixstringsg", null);
+    	} else {
+    		Toast.makeText(getApplicationContext(), "Oops, you broke it", Toast.LENGTH_LONG).show();
+    	}
+    }
+    
+    public void devDialog(int icon, int name, int bio, final String twitter, final String donate) {
+    	AlertDialog.Builder b = new AlertDialog.Builder(this);
+    	b.setTitle(name);
+    	b.setIcon(icon);
+    	b.setMessage(bio);
+    	b.setPositiveButton("Donate", new DialogInterface.OnClickListener() {
+			
+			public void onClick(DialogInterface dialog, int which) {
+				// TODO Auto-generated method stub
+				Toast.makeText(getApplicationContext(), "Soon...", Toast.LENGTH_SHORT).show();
+			}
+		});
+    	b.setNeutralButton("Twitter", new DialogInterface.OnClickListener() {
+			
+			public void onClick(DialogInterface dialog, int which) {
+				// TODO Auto-generated method stub
+				Intent i = new Intent(Intent.ACTION_VIEW);
+				i.setData(Uri.parse(twitter));
+				startActivity(i);
+			}
+		});
+    	b.setNegativeButton("Close", new DialogInterface.OnClickListener() {
+			
+			public void onClick(DialogInterface dialog, int which) {
+				// TODO Auto-generated method stub
+			dialog.cancel();	
+			}
+		});
+    	b.create();
+    	b.show();
+    }
+    
+    @SuppressLint("CommitPrefEdits")
+	@SuppressWarnings("deprecation")
 	public void firstRun() {
     	SharedPreferences settings = getSharedPreferences("PREFS", 0);
     	final SharedPreferences.Editor ed = settings.edit();
@@ -132,7 +198,7 @@ public class Main extends Activity {
             case R.id.about:
                 AlertDialog.Builder b = new AlertDialog.Builder(this);
                 b.setTitle(R.string.about);
-                b.setMessage("AOKPCB Companion\nAlpha 1\n\nDeveloped by cr5315\n\nIf you have this and aren't cr5315, remicks, scar45, or sixstringsg, you shouldn't have this");
+                b.setMessage("AOKPCB Companion\nBeta 1\n\nDeveloped by cr5315\n\nIf you have this and aren't cr5315, remicks, scar45, or sixstringsg, you shouldn't have this");
                 b.setNeutralButton("OK", new DialogInterface.OnClickListener() {
 					
 					public void onClick(DialogInterface dialog, int which) {
@@ -147,5 +213,4 @@ public class Main extends Activity {
                 return super.onOptionsItemSelected(item);
         }
     }
-    
 }

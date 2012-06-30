@@ -29,7 +29,7 @@
     
     <!-- Main Page -->
     <string name="hello">Hello</string>
-    <string name="hell2">. What can I help you with today?</string>
+    <string name="hello2">.</string>
     <string name="updates">Check for ROM updates</string>
     
     <!-- Update -->
@@ -38,5 +38,11 @@
     <string name="changelog">Changelog:</string>   
     <string name="current">Current Version:</string>
     <string name="latest">Latest Version:</string>
+    
+    <!-- Bios -->
+    <string name="bio_scar45">scar45 bio</string>
+    <string name="bio_remicks">remicks bio</string>
+    <string name="bio_cr5315">cr5315 bio</string>
+    <string name="bio_sixstringsg">sixstringsg bio</string>
 
 </resources>

@@ -2,7 +2,7 @@
 
 ## Current Version
 
-### Alpha 1
+### Beta 1
 
 
 

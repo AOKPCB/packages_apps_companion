@@ -19,6 +19,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.cr5315.companion.R;
 
 public class ReportBug extends Activity {
 	

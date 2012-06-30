@@ -1,46 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="devices">
-    	<item>captivatemtd</item>
-    	<item>crepo</item>
-    	<item>crespo4g</item>
-    	<item>espressowifi</item>
-    	<item>fascinatemtd</item>
-    	<item>galaxysmtd</item>
-    	<item>inc</item>
-    	<item>maguro</item>
-    	<item>otter</item>
-    	<item>p1c</item>
-    	<item>p4</item>
-    	<item>p4vzw</item>
-    	<item>p4wifi</item>
-    	<item>p5wifi</item>
-    	<item>p990</item>
-    	<item>p999</item>
-    	<item>picasso</item>
-    	<item>pyramid</item>
-    	<item>stringray</item>
-    	<item>supersonic</item>
-    	<item>tenderloin</item>
-    	<item>tf101</item>
-    	<item>tf201</item>
-    	<item>toro</item>
-    	<item>toroplus</item>
-    	<item>vibrantmtd</item>
-    	<item>ville</item>
-    	<item>vivow</item>
-    	<item>wingray</item>
+    	<item>captivatemtd (Captivate)</item>
+    	<item>crespo (Nexus S)</item>
+    	<item>crespo4g (Nexus S Sprint)</item>
+    	<item>espressowifi (Galaxy Tab 2 7)</item>
+    	<item>fascinatemtd (Fascinate)</item>
+    	<item>galaxysmtd (Galaxy S)</item>
+    	<item>hercules (Galaxy S 2)</item>
+    	<item>i9300 (Galaxy S 3)</item>
+    	<item>inc (Incredible)</item>
+    	<item>maguro (Galaxy Nexus GSM)</item>
+    	<item>mesmerizemtd (Mexmerize)</item>
+    	<item>n7000 (Galaxy Note)</item>
+    	<item>otter (Kindle Fire)</item>
+    	<item>p1c (Galaxy Tab 7)</item>
+    	<item>p4 (Galaxy Tab 10.1 3G)</item>
+    	<item>p4vzw (Galaxy Tab 10.1 Verizon)</item>
+    	<item>p4wifi (Galaxy Tab 10.1 Wifi)</item>
+    	<item>p5wifi (Galaxy Tab 8.9 WiFi)</item>
+    	<item>p990 (Optimus 2X)</item>
+    	<item>p999 (G2x)</item>
+    	<item>picasso (Iconia A500)</item>
+    	<item>pyramid (Sensation)</item>
+    	<item>showcasemtd (Showcase)</item>
+    	<item>stringray (Xoom)</item>
+    	<item>supersonic (EVO 4G)</item>
+    	<item>tenderloin (Touchpad)</item>
+    	<item>tf101 (Transformer)</item>
+    	<item>tf201 (Transformer Prime)</item>
+    	<item>toro (Galaxy Nexus Verizon)</item>
+    	<item>toroplus (Galaxy Nexus Sprint)</item>
+    	<item>vibrantmtd (Vibrant)</item>
+    	<item>ville (One S)</item>
+    	<item>vivow (Incredible 2)</item>
+    	<item>wingray (Xoom Wifi)</item>
     </string-array>
     
    <string-array name="devicesValues">
     	<item>captivatemtd</item>
-    	<item>crepo</item>
+    	<item>crespo</item>
     	<item>crespo4g</item>
     	<item>espressowifi</item>
     	<item>fascinatemtd</item>
     	<item>galaxysmtd</item>
+    	<item>hercules</item>
+    	<item>i9300</item>
     	<item>inc</item>
     	<item>maguro</item>
+    	<item>mesmerizemtd</item>
+    	<item>n7000</item>
     	<item>otter</item>
     	<item>p1c</item>
     	<item>p4</item>
@@ -51,6 +60,7 @@
     	<item>p999</item>
     	<item>picasso</item>
     	<item>pyramid</item>
+    	<item>showcasemtd</item>
     	<item>stringray</item>
     	<item>supersonic</item>
     	<item>tenderloin</item>
