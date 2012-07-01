@@ -1,5 +1,9 @@
 package com.cr5315.AOKPCB;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -12,6 +16,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -19,6 +24,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -30,6 +36,7 @@ public class Main extends Activity {
 	ProgressDialog dialog;	
 	String tag = "AOKPCB";
 	String uName;
+	Boolean logo = false;
 	
     /** Called when the activity is first created. */
     @Override
@@ -83,18 +90,69 @@ public class Main extends Activity {
     
     public void devClick(int position) {
     	if (position == 0) {
-    		Toast.makeText(getApplicationContext(), "Soon...", Toast.LENGTH_SHORT).show();
+    		showLogo();
     	} else if (position == 1) {
-    		devDialog(R.drawable.dev_scar45, R.string.scar45, R.string.bio_scar45, "https://twitter.com/scar45", null);
+    		devDialog(R.drawable.dev_scar45, R.string.scar45, R.string.bio_scar45, "https://twitter.com/scar45", "http://goo.gl/F2DEX");
     	} else if (position == 2) {
-    		devDialog(R.drawable.dev_remicks, R.string.remicks, R.string.bio_remicks, "https://twitter.com/remicksTweetz", null);
+    		devDialog(R.drawable.dev_remicks, R.string.remicks, R.string.bio_remicks, "https://twitter.com/remicksTweetz", "http://goo.gl/hYCD8");
     	} else if (position == 3) {
-    		devDialog(R.drawable.dev_cr5315, R.string.cr5315, R.string.bio_cr5315, "https://twitter.com/cr5315", null);
+    		devDialog(R.drawable.dev_cr5315, R.string.cr5315, R.string.bio_cr5315, "https://twitter.com/cr5315", "http://goo.gl/XVlvd");
     	} else if (position == 4) {
-    		devDialog(R.drawable.dev_sixstringsg, R.string.sixstringsg, R.string.bio_sixstringsg, "https://twitter.com/sixstringsg", null);
+    		devDialog(R.drawable.dev_sixstringsg, R.string.sixstringsg, R.string.bio_sixstringsg, "https://twitter.com/sixstringsg", "http://goo.gl/ak698");
     	} else {
     		Toast.makeText(getApplicationContext(), "Oops, you broke it", Toast.LENGTH_LONG).show();
     	}
+    }
+    
+    public void showLogo() {
+    	logo = true;
+    	setContentView(R.layout.about);
+        ImageButton logo = (ImageButton) findViewById(R.id.logoImage);
+        
+        Toast.makeText(getApplicationContext(), getModVersion(), Toast.LENGTH_LONG).show();
+        
+        logo.setOnClickListener(new View.OnClickListener() {
+			
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent restart = new Intent (Main.this, Main.class);
+	            startActivity(restart);
+	            finish();
+			}
+		});
+    	
+    }
+    
+    public static String getModVersion() {
+        String modVer = getSystemProperty(Versions.RO_AOKPCB_VERSION);
+
+        return (modVer == null || modVer.length() == 0 ? "Unknown" : modVer);
+    }
+    
+    public static String getSystemProperty(String propName) {
+        String line;
+        BufferedReader input = null;
+        try {
+            Process p = Runtime.getRuntime().exec("getprop " + propName);
+            input = new BufferedReader(new InputStreamReader(p.getInputStream()), 1024);
+            line = input.readLine();
+            input.close();
+        }
+        catch (IOException ex) {
+            Log.e("AOKPCB", "Not able to read prop " + propName, ex);
+            return null;
+        }
+        finally {
+            if (input != null) {
+                try {
+                    input.close();
+                }
+                catch (IOException e) {
+                    Log.e("AOKPCB", "Exception while closing InputStream", e);
+                }
+            }
+        }
+        return line;
     }
     
     public void devDialog(int icon, int name, int bio, final String twitter, final String donate) {
@@ -106,7 +164,9 @@ public class Main extends Activity {
 			
 			public void onClick(DialogInterface dialog, int which) {
 				// TODO Auto-generated method stub
-				Toast.makeText(getApplicationContext(), "Soon...", Toast.LENGTH_SHORT).show();
+				Intent d = new Intent(Intent.ACTION_VIEW);
+				d.setData(Uri.parse(donate));
+				startActivity(d);
 			}
 		});
     	b.setNeutralButton("Twitter", new DialogInterface.OnClickListener() {
@@ -213,4 +273,15 @@ public class Main extends Activity {
                 return super.onOptionsItemSelected(item);
         }
     }
+    
+	  @Override
+	    public boolean onKeyDown(int keyCode, KeyEvent event) {
+	        if ((keyCode == KeyEvent.KEYCODE_BACK) && logo == true) {
+	            Intent restart = new Intent (Main.this, Main.class);
+	            startActivity(restart);
+	            finish();
+	            return true;
+	        }
+	        return super.onKeyDown(keyCode, event);
+	    }
 }
