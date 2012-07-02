@@ -2,9 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.cr5315.companion"
     android:versionCode="1"
-    android:versionName="Beta 1" >
+    android:versionName="Beta 2" >
 
     <uses-sdk android:minSdkVersion="15" />
+    
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:icon="@drawable/ic_launcher"
@@ -20,6 +24,7 @@
         </activity>
         <activity android:name="com.cr5315.AOKPCB.ReportBug" />
         <activity android:name="com.cr5315.AOKPCB.Preferences" />
+        <activity android:name="com.cr5315.AOKPCB.Update" />
     </application>
 
 </manifest>

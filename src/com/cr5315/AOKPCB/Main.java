@@ -250,6 +250,11 @@ public class Main extends Activity {
             	startActivity(rIntent);
             	finish();
                 return true;
+            case R.id.update:
+            	Intent uIntent = new Intent (Main.this, Update.class);
+            	startActivity(uIntent);
+            	finish();
+            	return true;
             case R.id.settings:
             	Intent sIntent = new Intent (Main.this, Preferences.class);
             	startActivity(sIntent);
@@ -258,7 +263,7 @@ public class Main extends Activity {
             case R.id.about:
                 AlertDialog.Builder b = new AlertDialog.Builder(this);
                 b.setTitle(R.string.about);
-                b.setMessage("AOKPCB Companion\nBeta 1\n\nDeveloped by cr5315\n\nIf you have this and aren't cr5315, remicks, scar45, or sixstringsg, you shouldn't have this");
+                b.setMessage("AOKPCB Companion\nBeta 2\n\nDeveloped by cr5315\n\nIf you have this and aren't cr5315, remicks, scar45, or sixstringsg, you shouldn't have this");
                 b.setNeutralButton("OK", new DialogInterface.OnClickListener() {
 					
 					public void onClick(DialogInterface dialog, int which) {

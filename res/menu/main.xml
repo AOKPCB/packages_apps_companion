@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
-    <item android:id="@+id/reportBug" android:showAsAction="collapseActionView" android:title="@string/reportMenu"></item>
+    <item android:id="@+id/update" android:title="@string/update_title" android:showAsAction="collapseActionView"></item><item android:id="@+id/reportBug" android:showAsAction="collapseActionView" android:title="@string/reportMenu"></item>
     <item android:id="@+id/settings" android:showAsAction="collapseActionView" android:title="@string/settings"></item><item android:id="@+id/about" android:title="@string/about" android:showAsAction="collapseActionView"></item>
+    
     
 </menu>
