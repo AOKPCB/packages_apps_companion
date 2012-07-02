@@ -20,7 +20,8 @@ And then change the String in [Versions.java](https://github.com/cr5315/packages
 
 AOKPCB Companion checks a file hosted on a server (presumably yours) to see if there is a newer version
 Inside the file, you will see this
-```1
+```
+1
 http://www.example.com/rom.zip
 ```
 
